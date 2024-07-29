@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-07-29T21:45:20 GST" name="Default suite" finished-at="2024-07-29T21:45:55 GST" duration-ms="35031">
+    <groups>
+    </groups>
+    <test started-at="2024-07-29T21:45:20 GST" name="Default test" finished-at="2024-07-29T21:45:55 GST" duration-ms="35031">
+      <class name="testClasses.CaptureVitalsTestClass">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testClasses.CaptureVitalsTestClass@6221a451]" started-at="2024-07-29T21:45:20 GST" name="beforeMethod" finished-at="2024-07-29T21:45:32 GST" duration-ms="12024" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyPatientVitalsAreCaptured()[pri:1, instance:testClasses.CaptureVitalsTestClass@6221a451]" started-at="2024-07-29T21:45:32 GST" name="verifyPatientVitalsAreCaptured" finished-at="2024-07-29T21:45:55 GST" duration-ms="22923" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPatientVitalsAreCaptured -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testClasses.CaptureVitalsTestClass@6221a451]" started-at="2024-07-29T21:45:55 GST" name="afterMethod" finished-at="2024-07-29T21:45:55 GST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPatientVitalsAreCaptured status=SUCCESS method=CaptureVitalsTestClass.verifyPatientVitalsAreCaptured()[pri:1, instance:testClasses.CaptureVitalsTestClass@6221a451] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.CaptureVitalsTestClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
