@@ -1,5 +1,11 @@
 package testClasses;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -24,7 +30,7 @@ public class CaptureVitalsTestClass extends BaseClass {
 		hp.selectCaptureVitals();
 
 		//Assert.assertTrue(cp.captureVitalsOfPatient(lp.readStringDataFromExcel(17, 4), lp.readStringDataFromExcel(17, 5), lp.readStringDataFromExcel(17, 6)));
-		Assert.assertTrue(cp.captureVitalsOfPatient("100HPW", "100", "100"));
+		AssertJUnit.assertTrue(cp.captureVitalsOfPatient("100HPW", "100", "100"));
 
 	}
 

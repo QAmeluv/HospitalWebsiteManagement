@@ -1,5 +1,11 @@
 package testClasses;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
@@ -27,7 +33,7 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 		as.clickManageServiceTypes();
 
 		String serviceHeading = as.addNewServiceType(lp.readStringDataFromExcel(36, 3), "60");
-		Assert.assertTrue(serviceHeading.contains(lp.readStringDataFromExcel(36, 4)));
+		AssertJUnit.assertTrue(serviceHeading.contains(lp.readStringDataFromExcel(36, 4)));
 
 	}
 
@@ -42,7 +48,7 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 		hp.selectAppointmentScheduling();
 		as.clickManageServiceTypes();
 		String serviceHeadingTest = as.editService(lp.readStringDataFromExcel(38, 3), "60");
-		Assert.assertTrue(serviceHeadingTest.contains(lp.readStringDataFromExcel(38, 4)));
+		AssertJUnit.assertTrue(serviceHeadingTest.contains(lp.readStringDataFromExcel(38, 4)));
 
 	}
 
@@ -55,7 +61,7 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 		lp.login(lp.readStringDataFromExcel(38, 1),lp.readStringDataFromExcel(38, 2));
 		hp.selectAppointmentScheduling();
 		as.clickManageServiceTypes();
-		assertTrue(as.deleteService());
+		AssertJUnit.assertTrue(as.deleteService());
 
 	}
 }

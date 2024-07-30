@@ -1,5 +1,11 @@
 package testClasses;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -27,7 +33,7 @@ public class FindPatientTestClass extends BaseClass {
 		fp.searchPatient("100HTR");
 		String actualPatientid = fp.fetchPatientIdTextValue();
 		//Assert.assertSame(actualPatientid, lp.readStringDataFromExcel(13, 4));
-		Assert.assertEquals(actualPatientid, "100HTR");
+		AssertJUnit.assertEquals(actualPatientid, "100HTR");
 
 	}
 
@@ -43,7 +49,7 @@ public class FindPatientTestClass extends BaseClass {
 		hp.selectFindPatient();
 		//fp.searchPatient(lp.readStringDataFromExcel(14, 4));
 		fp.searchPatient( "100HTR");
-		Assert.assertTrue(fp.DeletePatient(lp.readStringDataFromExcel(14, 3)));
+		AssertJUnit.assertTrue(fp.DeletePatient(lp.readStringDataFromExcel(14, 3)));
 
 	}
 }

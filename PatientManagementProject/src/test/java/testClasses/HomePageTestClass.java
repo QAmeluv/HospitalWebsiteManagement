@@ -1,5 +1,11 @@
 package testClasses;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -19,7 +25,7 @@ public class HomePageTestClass extends BaseClass {
 
 		lp.login(lp.readStringDataFromExcel(10, 1), lp.readStringDataFromExcel(10, 2));
 		String actualUrl = hp.logout();
-		Assert.assertEquals(actualUrl, lp.readStringDataFromExcel(10, 3));
+		AssertJUnit.assertEquals(actualUrl, lp.readStringDataFromExcel(10, 3));
 
 	}
 

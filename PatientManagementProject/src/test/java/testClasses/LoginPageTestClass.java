@@ -1,5 +1,11 @@
 package testClasses;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -20,7 +26,7 @@ public class LoginPageTestClass extends BaseClass {
 		lp.login(lp.readStringDataFromExcel(1, 1), lp.readStringDataFromExcel(1, 2));
 		hp = new HomePageClass(driver);
 		String actual = hp.getsuperAdminTextValue();
-		Assert.assertEquals(actual, lp.readStringDataFromExcel(1, 3));
+		AssertJUnit.assertEquals(actual, lp.readStringDataFromExcel(1, 3));
 
 	}
 
@@ -30,7 +36,7 @@ public class LoginPageTestClass extends BaseClass {
 		lp = new LoginPageClass(driver);
 		lp.login(uname, pwd);
 		String actualMessage = lp.textOfInvalidCredsMessageBox();
-		Assert.assertTrue(actualMessage.contains(lp.readStringDataFromExcel(3, 3)));
+		AssertJUnit.assertTrue(actualMessage.contains(lp.readStringDataFromExcel(3, 3)));
 
 	}
 
@@ -39,7 +45,7 @@ public class LoginPageTestClass extends BaseClass {
 	public void verifyCannotLoginOption() throws IOException {
 		lp = new LoginPageClass(driver);
 		String actualPopUpMessage = lp.cannotLogin();
-		Assert.assertTrue(actualPopUpMessage.contains(lp.readStringDataFromExcel(7, 3)));
+		AssertJUnit.assertTrue(actualPopUpMessage.contains(lp.readStringDataFromExcel(7, 3)));
 
 	}
 
@@ -47,7 +53,7 @@ public class LoginPageTestClass extends BaseClass {
 
 	public void verifyIfLogoIsDiplayed() {
 		lp = new LoginPageClass(driver);
-		Assert.assertTrue(lp.logoDisplayed());
+		AssertJUnit.assertTrue(lp.logoDisplayed());
 
 	}
 
