@@ -35,10 +35,6 @@ public class FindPatientRecordClass {
 	@FindBy(xpath = "//div[@class='action-section']//child::li[6]")
 	WebElement addPastVisitTab;
 
-//	@FindBy(xpath = "//div[@class='action-section']//ul//child::li[7]")
-//	WebElement deletePatient;
-	
-	
 	@FindBy(xpath = "//a[contains(@id,'coreapps.deletePatient')]")
 	WebElement deletePatient;
 
@@ -50,6 +46,18 @@ public class FindPatientRecordClass {
 
 	@FindBy(xpath = "//div[@class='toast-container toast-position-top-right']")
 	WebElement ToastContainer;
+
+	@FindBy(xpath = "//span[@id='edit-patient-demographics']//a")
+	WebElement editTab;
+
+	@FindBy(name = "middleName")
+	WebElement middleNameTab;
+
+	@FindBy(id = "save-form")
+	WebElement saveFormBtn;
+
+	@FindBy(id = "registration-submit")
+	WebElement registrationSubmitBtn;
 
 	public void searchPatient(String patientId) {
 		ex.visibilityOfElementLocatedWait(driver, patientSearchBox);
@@ -75,15 +83,35 @@ public class FindPatientRecordClass {
 		return gl.isElementDisplayed(ToastContainer);
 
 	}
-	public String readStringDataFromExcel(int row,int col) throws IOException {
-		return ExcelReadClass.readStringData(row,col);
-		
+
+	public boolean editPatient(String patientId, String middleName) {
+		searchPatient(patientId);
+
+		ex.visibilityOfElementLocatedWait(driver, editTab);
+		gl.clickOnElement(editTab);
+
+		ex.visibilityOfElementLocatedWait(driver, middleNameTab);
+		gl.clearAndTypeOnElement(middleNameTab, middleName);
+
+		ex.visibilityOfElementLocatedWait(driver, saveFormBtn);
+		gl.clickOnElement(saveFormBtn);
+
+		ex.visibilityOfElementLocatedWait(driver, registrationSubmitBtn);
+		gl.clickOnElement(registrationSubmitBtn);
+
+		ex.visibilityOfElementLocatedWait(driver, ToastContainer);
+		return gl.isElementDisplayed(ToastContainer);
+
 	}
-	
-    public String readIntDataFromExcel(int row,int col) throws IOException {
-    	return ExcelReadClass.readIntegerData(row,col);
-    	
-		
+
+	public String readStringDataFromExcel(int row, int col) throws IOException {
+		return ExcelReadClass.readStringData(row, col);
+
+	}
+
+	public String readIntDataFromExcel(int row, int col) throws IOException {
+		return ExcelReadClass.readIntegerData(row, col);
+
 	}
 
 }

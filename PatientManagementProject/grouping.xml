@@ -10,14 +10,15 @@
 		
 		<run>
 			<include name="launch"></include>
-			<include name="basicfunctionality"></include>
+			<exclude name="basicfunctionality"></exclude>
+			<include name="serviceRelated"></include>
+		
 			<include name="close"></include>
 		</run>
 	</groups>
     <classes>
-      <class name="testClasses.HomePageTestClass"/>
-      <class name="testClasses.LoginPageTestClass"/>
-      <class name="testClasses.RegisterAPatientTestClass"/>
+      
+      <class name="testClasses.AppointmentSchedulingTestClass"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

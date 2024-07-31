@@ -1,7 +1,5 @@
 package testClasses;
 
-
-
 import utilities.ScreenShot;
 
 import org.testng.annotations.BeforeMethod;
@@ -33,23 +31,22 @@ public class BaseClass {
 	}
 
 	@Parameters("browser")
-	@BeforeMethod(groups = {"launch"})
+	@BeforeMethod(groups = { "launch" })
 	public void beforeMethod(String browser) throws IOException {
 		readProperty();
-		if(browser.equalsIgnoreCase("chrome")) {
+		if (browser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
-		}
-		else if(browser.equalsIgnoreCase("safari")) {
+		} else if (browser.equalsIgnoreCase("safari")) {
 			driver = new SafariDriver();
 		}
-		
+
 		driver.get(property.getProperty("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
 
-	@AfterMethod(groups = {"close"})
+	@AfterMethod(groups = { "close" })
 	public void afterMethod(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			sh = new ScreenShot();
@@ -59,8 +56,8 @@ public class BaseClass {
 	}
 
 	@BeforeSuite(alwaysRun = true)
-	  public void createReport(final ITestContext testContext) {
-			extentReport.ExtentManager.createInstance().createTest(testContext.getName(), "message");
-		}
+	public void createReport(final ITestContext testContext) {
+		extentReport.ExtentManager.createInstance().createTest(testContext.getName(), "message");
+	}
 
 }

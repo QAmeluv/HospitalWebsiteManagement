@@ -31,7 +31,7 @@ public class ExcelReadClass {
 		Cell c = r.getCell(coloumn);
 		int a = (int) c.getNumericCellValue();
 		return String.valueOf(a);
-		
+
 	}
 
 }

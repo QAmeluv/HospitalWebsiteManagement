@@ -70,15 +70,15 @@ public class LoginPageClass {
 		return gl.isElementDisplayed(logo);
 
 	}
-	public String readStringDataFromExcel(int row,int col) throws IOException {
-		return ExcelReadClass.readStringData(row,col);
-		
+
+	public String readStringDataFromExcel(int row, int col) throws IOException {
+		return ExcelReadClass.readStringData(row, col);
+
 	}
-	
-    public String readIntDataFromExcel(int row,int col) throws IOException {
-    	return ExcelReadClass.readIntegerData(row,col);
-    	
-		
+
+	public String readIntDataFromExcel(int row, int col) throws IOException {
+		return ExcelReadClass.readIntegerData(row, col);
+
 	}
 
 }

@@ -18,9 +18,8 @@ import utilities.ExcelReadClass;
 public class LoginPageTestClass extends BaseClass {
 	LoginPageClass lp;
 	HomePageClass hp;
-	
 
-	@Test(priority=4,groups = {"basicfunctionality"})
+	@Test(priority = 4, groups = { "basicfunctionality" })
 	public void verifySucessfulLogin() throws IOException {
 		lp = new LoginPageClass(driver);
 		lp.login(lp.readStringDataFromExcel(1, 1), lp.readStringDataFromExcel(1, 2));
@@ -30,7 +29,8 @@ public class LoginPageTestClass extends BaseClass {
 
 	}
 
-	@Test(dataProviderClass = DataProviderClass.class, dataProvider = "unsucessfulLoginData",priority=2,groups = {"basicfunctionality"})
+	@Test(dataProviderClass = DataProviderClass.class, dataProvider = "unsucessfulLoginData", priority = 2, groups = {
+			"basicfunctionality" })
 
 	public void verifyUnsucessfulLogin(String uname, String pwd) throws IOException {
 		lp = new LoginPageClass(driver);
@@ -40,7 +40,7 @@ public class LoginPageTestClass extends BaseClass {
 
 	}
 
-	@Test(priority=3,groups = {"basicfunctionality"})
+	@Test(priority = 3, groups = { "basicfunctionality" })
 
 	public void verifyCannotLoginOption() throws IOException {
 		lp = new LoginPageClass(driver);
@@ -49,7 +49,7 @@ public class LoginPageTestClass extends BaseClass {
 
 	}
 
-	@Test(priority=1,groups = {"basicfunctionality"})
+	@Test(priority = 1, groups = { "basicfunctionality" })
 
 	public void verifyIfLogoIsDiplayed() {
 		lp = new LoginPageClass(driver);

@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testClasses.AppointmentSchedulingTestClass">
+      <class name="testClasses.HomePageTestClass">
         <methods>
-          <include name="verifyAddingNewService"/>
-          <include name="deleteService"/>
-          <include name="verifyEditService"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
+          <include name="createReport"/>
+          <include name="verifyLogoOutIsSucessful"/>
         </methods>
-      </class> <!-- testClasses.AppointmentSchedulingTestClass -->
+      </class> <!-- testClasses.HomePageTestClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

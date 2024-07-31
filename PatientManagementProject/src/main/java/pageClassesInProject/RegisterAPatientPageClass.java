@@ -121,6 +121,5 @@ public class RegisterAPatientPageClass {
 		return ExcelReadClass.readIntegerData(row, col);
 
 	}
-	
 
 }

@@ -20,7 +20,7 @@ public class FindPatientTestClass extends BaseClass {
 	HomePageClass hp;
 	FindPatientRecordClass fp;
 
-	@Test(priority=1)
+	@Test(priority = 1, groups = { "patientEdits" })
 	public void verifySearchingPatientRecord() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
@@ -30,14 +30,24 @@ public class FindPatientTestClass extends BaseClass {
 		hp.selectFindPatient();
 
 //		fp.searchPatient(lp.readStringDataFromExcel(13, 4));
-		fp.searchPatient("100HTR");
+		fp.searchPatient("100KG9");
 		String actualPatientid = fp.fetchPatientIdTextValue();
-		//Assert.assertSame(actualPatientid, lp.readStringDataFromExcel(13, 4));
-		AssertJUnit.assertEquals(actualPatientid, "100HTR");
+		// Assert.assertSame(actualPatientid, lp.readStringDataFromExcel(13, 4));
+		AssertJUnit.assertEquals(actualPatientid, "100KG9");
 
 	}
 
-	@Test(priority=2)
+	@Test(priority = 2, groups = { "patientEdits" })
+	public void verifyIfPatientEditisWorking() throws IOException {
+		lp = new LoginPageClass(driver);
+		hp = new HomePageClass(driver);
+		fp = new FindPatientRecordClass(driver);
+		lp.login(lp.readStringDataFromExcel(14, 1), lp.readStringDataFromExcel(14, 2));
+		hp.selectFindPatient();
+		Assert.assertTrue(fp.editPatient("100HM1", "Dicoz"));
+	}
+
+	@Test(priority = 3, groups = { "patientEdits" })
 
 	public void verifyDeletingPatient() throws InterruptedException, IOException
 
@@ -47,9 +57,10 @@ public class FindPatientTestClass extends BaseClass {
 		fp = new FindPatientRecordClass(driver);
 		lp.login(lp.readStringDataFromExcel(14, 1), lp.readStringDataFromExcel(14, 2));
 		hp.selectFindPatient();
-		//fp.searchPatient(lp.readStringDataFromExcel(14, 4));
-		fp.searchPatient( "100HTR");
+		// fp.searchPatient(lp.readStringDataFromExcel(14, 4));
+		fp.searchPatient("100KG9");
 		AssertJUnit.assertTrue(fp.DeletePatient(lp.readStringDataFromExcel(14, 3)));
 
 	}
+
 }

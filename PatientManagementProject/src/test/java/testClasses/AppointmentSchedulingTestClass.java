@@ -22,13 +22,13 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 	HomePageClass hp;
 	AppointmentSchedulingPageClass as;
 
-	@Test(priority=1)
+	@Test(priority = 1, groups = { "serviceRelated" })
 	public void verifyAddingNewService() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
 		as = new AppointmentSchedulingPageClass(driver);
 
-		lp.login(lp.readStringDataFromExcel(36, 1),lp.readStringDataFromExcel(36, 2));
+		lp.login(lp.readStringDataFromExcel(36, 1), lp.readStringDataFromExcel(36, 2));
 		hp.selectAppointmentScheduling();
 		as.clickManageServiceTypes();
 
@@ -37,14 +37,14 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 
 	}
 
-	@Test(priority=2)
+	@Test(priority = 2, groups = { "serviceRelated" })
 
 	public void verifyEditService() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
 		as = new AppointmentSchedulingPageClass(driver);
 
-		lp.login(lp.readStringDataFromExcel(38, 1),lp.readStringDataFromExcel(38, 2));
+		lp.login(lp.readStringDataFromExcel(38, 1), lp.readStringDataFromExcel(38, 2));
 		hp.selectAppointmentScheduling();
 		as.clickManageServiceTypes();
 		String serviceHeadingTest = as.editService(lp.readStringDataFromExcel(38, 3), "60");
@@ -52,13 +52,13 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 
 	}
 
-	@Test(priority=3)
+	@Test(priority = 3, groups = { "serviceRelated" })
 	public void deleteService() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
 		as = new AppointmentSchedulingPageClass(driver);
 
-		lp.login(lp.readStringDataFromExcel(38, 1),lp.readStringDataFromExcel(38, 2));
+		lp.login(lp.readStringDataFromExcel(38, 1), lp.readStringDataFromExcel(38, 2));
 		hp.selectAppointmentScheduling();
 		as.clickManageServiceTypes();
 		AssertJUnit.assertTrue(as.deleteService());

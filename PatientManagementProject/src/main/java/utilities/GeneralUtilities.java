@@ -94,11 +94,11 @@ public class GeneralUtilities {
 		element.sendKeys(value + Keys.ENTER);
 
 	}
-	
-//	public void movetoElementAndClickAndPressEnter(WebDriver driver,WebElement element) {
-//		
-//		Actions actions = new Actions(driver);
-//		actions.keyDown(Keys.ENTER).build().perform();
-//	}
+
+	public void clearAndTypeOnElement(WebElement element, String value) {
+
+		element.clear();
+		element.sendKeys(value);
+	}
 
 }

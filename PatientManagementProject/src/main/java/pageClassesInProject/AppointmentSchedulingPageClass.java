@@ -91,7 +91,6 @@ public class AppointmentSchedulingPageClass {
 
 	}
 
-	// TODO
 	public boolean deleteService() {
 		ex.visibilityOfElementLocatedWait(driver, deletePencil);
 		gl.clickOnElement(deletePencil);
@@ -104,14 +103,14 @@ public class AppointmentSchedulingPageClass {
 		return gl.isElementDisplayed(toastContainer);
 
 	}
-	public String readStringDataFromExcel(int row,int col) throws IOException {
-		return ExcelReadClass.readStringData(row,col);
-		
+
+	public String readStringDataFromExcel(int row, int col) throws IOException {
+		return ExcelReadClass.readStringData(row, col);
+
 	}
-	
-    public String readIntDataFromExcel(int row,int col) throws IOException {
-    	return ExcelReadClass.readIntegerData(row,col);
-    	
-		
+
+	public String readIntDataFromExcel(int row, int col) throws IOException {
+		return ExcelReadClass.readIntegerData(row, col);
+
 	}
 }
