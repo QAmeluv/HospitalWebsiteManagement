@@ -18,7 +18,7 @@ public class HomePageTestClass extends BaseClass {
 	LoginPageClass lp;
 	HomePageClass hp;
 
-	@Test(priority=1)
+	@Test(priority=1,groups = {"basicfunctionality"})
 	public void verifyLogoOutIsSucessful() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);

@@ -8,11 +8,45 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">35,031</td><td></td><td></td></tr>
+<tr><th colspan="8">GroupSuite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">158,736</td><td>launch, basicfunctionality, close</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testClasses.CaptureVitalsTestClass</td><td><a href="#m0">verifyPatientVitalsAreCaptured</a></td><td rowspan="1">1722275132341</td><td rowspan="1">22923</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">GroupSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testClasses.RegisterAPatientTestClass</td><td><a href="#m0">verifyPatientRegistration</a></td><td rowspan="1">1722421381853</td><td rowspan="1">22449</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testClasses.HomePageTestClass</td><td><a href="#m1">verifyLogoOutIsSucessful</a></td><td rowspan="1">1722421259749</td><td rowspan="1">9547</td></tr><tr class="passedodd"><td rowspan="6">testClasses.LoginPageTestClass</td><td><a href="#m2">verifyCannotLoginOption</a></td><td rowspan="1">1722421347110</td><td rowspan="1">2606</td></tr><tr class="passedodd"><td><a href="#m3">verifyIfLogoIsDiplayed</a></td><td rowspan="1">1722421281889</td><td rowspan="1">724</td></tr><tr class="passedodd"><td><a href="#m4">verifySucessfulLogin</a></td><td rowspan="1">1722421362304</td><td rowspan="1">7144</td></tr><tr class="passedodd"><td><a href="#m5">verifyUnsucessfulLogin</a></td><td rowspan="3">1722421313251</td><td rowspan="3">4911</td></tr><tr class="passedodd"><td><a href="#m6">verifyUnsucessfulLogin</a></td></tr><tr class="passedodd"><td><a href="#m7">verifyUnsucessfulLogin</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">testClasses.CaptureVitalsTestClass#verifyPatientVitalsAreCaptured</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">testClasses.RegisterAPatientTestClass#verifyPatientRegistration</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#address1&quot;}
+  (Session info: chrome=127.0.6533.88)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.5&apos;, java.version: &apos;17.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8dd0120cce40b7c9e820a2325a2100a6, findElement {using=id, value=address1}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.88, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: /var/folders/39/pj8kwyp5081...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56433}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56433/devtoo..., se:cdpVersion: 127.0.6533.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8dd0120cce40b7c9e820a2325a2100a6
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy16.sendKeys(Unknown Source)
+	at utilities.GeneralUtilities.typeOnElement(GeneralUtilities.java:15)
+	at pageClassesInProject.RegisterAPatientPageClass.registeringPatient(RegisterAPatientPageClass.java:97)
+	at testClasses.RegisterAPatientTestClass.verifyPatientRegistration(RegisterAPatientTestClass.java:31)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">testClasses.HomePageTestClass#verifyLogoOutIsSucessful</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testClasses.LoginPageTestClass#verifyCannotLoginOption</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testClasses.LoginPageTestClass#verifyIfLogoIsDiplayed</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">testClasses.LoginPageTestClass#verifySucessfulLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">testClasses.LoginPageTestClass#verifyUnsucessfulLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>ad</td><td>Admin123</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">testClasses.LoginPageTestClass#verifyUnsucessfulLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>admi</td><td>Admi</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">testClasses.LoginPageTestClass#verifyUnsucessfulLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>admin</td><td>Admin12</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

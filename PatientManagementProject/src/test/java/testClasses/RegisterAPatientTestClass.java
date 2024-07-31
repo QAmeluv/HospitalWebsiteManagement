@@ -20,7 +20,7 @@ public class RegisterAPatientTestClass extends BaseClass {
 	HomePageClass hp;
 	RegisterAPatientPageClass rp;
 
-	@Test(priority = 1)
+	@Test(priority = 1,groups = {"basicfunctionality"})
 	public void verifyPatientRegistration() throws InterruptedException, IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
@@ -36,11 +36,3 @@ public class RegisterAPatientTestClass extends BaseClass {
 	}
 }
 
-//6, lp.readStringDataFromExcel(25, 3), lp.readStringDataFromExcel(26, 3),
-//lp.readStringDataFromExcel(27, 3), lp.readStringDataFromExcel(28, 3), lp.readStringDataFromExcel(29, 3),
-//lp.readStringDataFromExcel(30, 3), lp.readStringDataFromExcel(31, 3),
-//lp.readStringDataFromExcel(32, 3)
-
-//String gname, String fname, int index, String day, int month, String year,
-//String address1, String address2, String city, String state, String country, String postalCode,
-//String phnum

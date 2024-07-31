@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testClasses.CaptureVitalsTestClass">
+      <class name="testClasses.AppointmentSchedulingTestClass">
         <methods>
+          <include name="verifyAddingNewService"/>
+          <include name="deleteService"/>
+          <include name="verifyEditService"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
-          <include name="verifyPatientVitalsAreCaptured"/>
         </methods>
-      </class> <!-- testClasses.CaptureVitalsTestClass -->
+      </class> <!-- testClasses.AppointmentSchedulingTestClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
