@@ -31,10 +31,10 @@ public class FindPatientTestClass extends BaseClass {
 		hp.selectFindPatient();
 
 //		fp.searchPatient(lp.readStringDataFromExcel(13, 4));
-		fp.searchPatient("100HM1");
+		fp.searchPatient("100HPW");
 		String actualPatientid = fp.fetchPatientIdTextValue();
 		// Assert.assertSame(actualPatientid, lp.readStringDataFromExcel(13, 4));
-		AssertJUnit.assertEquals(actualPatientid, "100HM1");
+		AssertJUnit.assertEquals(actualPatientid, "100HPW");
 
 	}
 
@@ -45,7 +45,7 @@ public class FindPatientTestClass extends BaseClass {
 		fp = new FindPatientRecordClass(driver);
 		lp.login(lp.readStringDataFromExcel(14, 1), lp.readStringDataFromExcel(14, 2));
 		hp.selectFindPatient();
-		Assert.assertTrue(fp.editPatient("100HRU", "Dicoz"));
+		Assert.assertTrue(fp.editPatient("100HPW", "Dicoz"));
 	}
 
 	@Test(priority = 3, groups = { "patientEdits" },retryAnalyzer = RetryAnalyzer.class)
@@ -59,7 +59,7 @@ public class FindPatientTestClass extends BaseClass {
 		lp.login(lp.readStringDataFromExcel(14, 1), lp.readStringDataFromExcel(14, 2));
 		hp.selectFindPatient();
 		// fp.searchPatient(lp.readStringDataFromExcel(14, 4));
-		fp.searchPatient("100HTR");
+		fp.searchPatient("100HPW");
 		AssertJUnit.assertTrue(fp.DeletePatient(lp.readStringDataFromExcel(14, 3)));
 
 	}
