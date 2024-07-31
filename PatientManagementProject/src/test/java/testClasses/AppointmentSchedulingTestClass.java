@@ -16,13 +16,14 @@ import org.testng.annotations.Test;
 import pageClassesInProject.AppointmentSchedulingPageClass;
 import pageClassesInProject.HomePageClass;
 import pageClassesInProject.LoginPageClass;
+import retryAnalyzer.RetryAnalyzer;
 
 public class AppointmentSchedulingTestClass extends BaseClass {
 	LoginPageClass lp;
 	HomePageClass hp;
 	AppointmentSchedulingPageClass as;
 
-	@Test(priority = 1, groups = { "serviceRelated" })
+	@Test(priority = 1, groups = { "serviceRelated" },retryAnalyzer = RetryAnalyzer.class)
 	public void verifyAddingNewService() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
@@ -37,7 +38,7 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 2, groups = { "serviceRelated" })
+	@Test(priority = 2, groups = { "serviceRelated" },retryAnalyzer = RetryAnalyzer.class)
 
 	public void verifyEditService() throws IOException {
 		lp = new LoginPageClass(driver);
@@ -52,7 +53,7 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 3, groups = { "serviceRelated" })
+	@Test(priority = 3, groups = { "serviceRelated" },retryAnalyzer = RetryAnalyzer.class)
 	public void deleteService() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);

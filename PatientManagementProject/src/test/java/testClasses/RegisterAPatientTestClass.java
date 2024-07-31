@@ -14,13 +14,14 @@ import org.testng.annotations.Test;
 import pageClassesInProject.HomePageClass;
 import pageClassesInProject.LoginPageClass;
 import pageClassesInProject.RegisterAPatientPageClass;
+import retryAnalyzer.RetryAnalyzer;
 
 public class RegisterAPatientTestClass extends BaseClass {
 	LoginPageClass lp;
 	HomePageClass hp;
 	RegisterAPatientPageClass rp;
 
-	@Test(priority = 1, groups = { "basicfunctionality" })
+	@Test(priority = 1, groups = { "basicfunctionality" },retryAnalyzer = RetryAnalyzer.class)
 	public void verifyPatientRegistration() throws InterruptedException, IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);

@@ -13,12 +13,13 @@ import org.testng.annotations.Test;
 
 import pageClassesInProject.HomePageClass;
 import pageClassesInProject.LoginPageClass;
+import retryAnalyzer.RetryAnalyzer;
 
 public class HomePageTestClass extends BaseClass {
 	LoginPageClass lp;
 	HomePageClass hp;
 
-	@Test(priority = 1, groups = { "basicfunctionality" })
+	@Test(priority = 1, groups = { "basicfunctionality" },retryAnalyzer = RetryAnalyzer.class)
 	public void verifyLogoOutIsSucessful() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
