@@ -33,7 +33,7 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 		hp.selectAppointmentScheduling();
 		as.clickManageServiceTypes();
 
-		String serviceHeading = as.addNewServiceType(lp.readStringDataFromExcel(36, 3), "60");
+		String serviceHeading = as.addNewServiceType("New Service", "60");
 		AssertJUnit.assertTrue(serviceHeading.contains(lp.readStringDataFromExcel(36, 4)));
 
 	}
@@ -48,7 +48,7 @@ public class AppointmentSchedulingTestClass extends BaseClass {
 		lp.login(lp.readStringDataFromExcel(38, 1), lp.readStringDataFromExcel(38, 2));
 		hp.selectAppointmentScheduling();
 		as.clickManageServiceTypes();
-		String serviceHeadingTest = as.editService(lp.readStringDataFromExcel(38, 3), "60");
+		String serviceHeadingTest = as.editService("testEdit", "60");
 		AssertJUnit.assertTrue(serviceHeadingTest.contains(lp.readStringDataFromExcel(38, 4)));
 
 	}

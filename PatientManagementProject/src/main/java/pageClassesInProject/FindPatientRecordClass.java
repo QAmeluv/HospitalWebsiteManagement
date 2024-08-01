@@ -1,6 +1,7 @@
 package pageClassesInProject;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -58,6 +59,9 @@ public class FindPatientRecordClass {
 
 	@FindBy(id = "registration-submit")
 	WebElement registrationSubmitBtn;
+	
+	@FindBy(xpath="//span[@class='PersonName-middleName']")
+	WebElement homePageMiddleName;
 
 	public void searchPatient(String patientId) {
 		ex.visibilityOfElementLocatedWait(driver, patientSearchBox);
@@ -84,7 +88,7 @@ public class FindPatientRecordClass {
 
 	}
 
-	public boolean editPatient(String patientId, String middleName) {
+	public boolean editPatient(String patientId, String middleName) throws InterruptedException {
 		searchPatient(patientId);
 
 		ex.visibilityOfElementLocatedWait(driver, editTab);
@@ -99,9 +103,15 @@ public class FindPatientRecordClass {
 		ex.visibilityOfElementLocatedWait(driver, registrationSubmitBtn);
 		gl.clickOnElement(registrationSubmitBtn);
 
-		ex.visibilityOfElementLocatedWait(driver, ToastContainer);
-		return gl.isElementDisplayed(ToastContainer);
-
+		ex.visibilityOfElementLocatedWait(driver, foundPatientId);
+		ex.visibilityOfElementLocatedWait(driver, homePageMiddleName);
+		
+	boolean patientFlag=gl.getTextOfElement(foundPatientId).equalsIgnoreCase(patientId); 
+	boolean middletFlag=gl.getTextOfElement(homePageMiddleName).equalsIgnoreCase(middleName);
+	
+		System.out.println(patientFlag);
+		System.out.println(middletFlag);
+		return middletFlag;
 	}
 
 	public String readStringDataFromExcel(int row, int col) throws IOException {

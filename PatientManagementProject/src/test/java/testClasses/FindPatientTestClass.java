@@ -2,15 +2,9 @@ package testClasses;
 
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import pageClassesInProject.FindPatientRecordClass;
 import pageClassesInProject.HomePageClass;
 import pageClassesInProject.LoginPageClass;
@@ -29,23 +23,20 @@ public class FindPatientTestClass extends BaseClass {
 
 		lp.login(lp.readStringDataFromExcel(13, 1), lp.readStringDataFromExcel(13, 2));
 		hp.selectFindPatient();
-
-//		fp.searchPatient(lp.readStringDataFromExcel(13, 4));
-		fp.searchPatient("100HPW");
+		fp.searchPatient("100JRT");
 		String actualPatientid = fp.fetchPatientIdTextValue();
-		// Assert.assertSame(actualPatientid, lp.readStringDataFromExcel(13, 4));
-		AssertJUnit.assertEquals(actualPatientid, "100HPW");
+		AssertJUnit.assertEquals(actualPatientid, "100JRT");
 
 	}
 
 	@Test(priority = 2, groups = { "patientEdits" },retryAnalyzer = RetryAnalyzer.class)
-	public void verifyIfPatientEditisWorking() throws IOException {
+	public void verifyIfPatientEditisWorking() throws IOException, InterruptedException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
 		fp = new FindPatientRecordClass(driver);
 		lp.login(lp.readStringDataFromExcel(14, 1), lp.readStringDataFromExcel(14, 2));
 		hp.selectFindPatient();
-		Assert.assertTrue(fp.editPatient("100HPW", "Dicoz"));
+		Assert.assertTrue(fp.editPatient("100HPW", "New"));
 	}
 
 	@Test(priority = 3, groups = { "patientEdits" },retryAnalyzer = RetryAnalyzer.class)
@@ -58,8 +49,7 @@ public class FindPatientTestClass extends BaseClass {
 		fp = new FindPatientRecordClass(driver);
 		lp.login(lp.readStringDataFromExcel(14, 1), lp.readStringDataFromExcel(14, 2));
 		hp.selectFindPatient();
-		// fp.searchPatient(lp.readStringDataFromExcel(14, 4));
-		fp.searchPatient("100HPW");
+		fp.searchPatient("100HRU");
 		AssertJUnit.assertTrue(fp.DeletePatient(lp.readStringDataFromExcel(14, 3)));
 
 	}
