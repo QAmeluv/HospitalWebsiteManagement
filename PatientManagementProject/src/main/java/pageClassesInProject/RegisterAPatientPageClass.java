@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ExcelReadClass;
 import utilities.ExplicitWaitClass;
 import utilities.GeneralUtilities;
+import utilities.RandomDataUtility;
 
 public class RegisterAPatientPageClass {
 	WebDriver driver;
@@ -110,6 +111,13 @@ public class RegisterAPatientPageClass {
 
 		return gl.getTextOfElement(registeredGivenName);
 
+	}
+	
+	public String readPatientGivenName() {
+		return RandomDataUtility.getfirstName();
+	}
+	public String readPatientLastName() {
+		return RandomDataUtility.getlastName();
 	}
 
 	public String readStringDataFromExcel(int row, int col) throws IOException {

@@ -9,20 +9,29 @@
     <groups>
       <run>
         <include name="launch"/>
+        <include name="basicfunctionality"/>
         <include name="patientEdits"/>
+        <include name="serviceRelated"/>
         <include name="close"/>
-        <exclude name="basicfunctionality"/>
       </run>
     </groups>
     <classes>
+      <class name="testClasses.AppointmentSchedulingTestClass">
+        <methods>
+          <include name="verifyAddingNewService"/>
+          <include name="deleteService"/>
+          <include name="verifyEditService"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="createReport"/>
+        </methods>
+      </class> <!-- testClasses.AppointmentSchedulingTestClass -->
       <class name="testClasses.FindPatientTestClass">
         <methods>
-          <include name="verifyIfPatientEditisWorking"/>
           <include name="verifySearchingPatientRecord"/>
           <include name="afterMethod"/>
-          <include name="verifyDeletingPatient"/>
-          <include name="createReport"/>
           <include name="beforeMethod"/>
+          <include name="createReport"/>
         </methods>
       </class> <!-- testClasses.FindPatientTestClass -->
     </classes>
