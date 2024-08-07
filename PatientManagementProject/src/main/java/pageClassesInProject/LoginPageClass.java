@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 import utilities.ExcelReadClass;
 import utilities.ExplicitWaitClass;
 import utilities.GeneralUtilities;
@@ -46,13 +47,37 @@ public class LoginPageClass {
 	@FindBy(xpath = "//div[@class='logo']//img")
 	WebElement logo;
 
-	public void login(String uname, String pwd) {
+	public LoginPageClass login(String uname, String pwd) {
 		gl.typeOnElement(usernameTextBox, uname);
 		gl.typeOnElement(passwordTextBox, pwd);
 		gl.clickOnElement(pharmacyTab);
 		gl.clickOnElement(loginButton);
+		return this;
 
 	}
+	
+	public LoginPageClass enterUserName(String uname) {
+		 gl.typeOnElement(usernameTextBox, uname);
+		 return this;
+		 }
+		 
+		 
+		 public LoginPageClass enterPassword(String pwd) {
+		 gl.typeOnElement(passwordTextBox, pwd);
+		 return this;
+		 }
+		 
+		 
+		 public LoginPageClass clickOnPharmacyTab() {
+		 gl.clickOnElement(pharmacyTab);
+		 return this;
+		 }
+		 
+		  public LoginPageClass clickOnLoginBtm() {
+		 gl.clickOnElement(loginButton);
+		 return this;
+		 }
+		 
 
 	public String textOfInvalidCredsMessageBox() {
 		ex.visibilityOfElementLocatedWait(driver, invalidCredsMessageBox);

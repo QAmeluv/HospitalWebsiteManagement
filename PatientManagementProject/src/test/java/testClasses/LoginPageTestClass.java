@@ -23,7 +23,7 @@ public class LoginPageTestClass extends BaseClass {
 	@Test(priority = 4, groups = { "basicfunctionality" },retryAnalyzer = RetryAnalyzer.class)
 	public void verifySucessfulLogin() throws IOException {
 		lp = new LoginPageClass(driver);
-		lp.login(lp.readStringDataFromExcel(1, 1), lp.readStringDataFromExcel(1, 2));
+		lp.enterUserName(lp.readStringDataFromExcel(1, 1)).enterPassword(lp.readStringDataFromExcel(1, 2)).clickOnPharmacyTab().clickOnLoginBtm();
 		hp = new HomePageClass(driver);
 		String actual = hp.getsuperAdminTextValue();
 		AssertJUnit.assertEquals(actual, lp.readStringDataFromExcel(1, 3));
