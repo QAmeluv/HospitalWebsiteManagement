@@ -53,7 +53,7 @@ public class AppointmentSchedulingPageClass {
 	WebElement toastContainer;
 
 	public void clickManageServiceTypes() {
-		
+
 		ex.visibilityOfElementLocatedWait(driver, manageSErviceTypesTab);
 		gl.clickOnElement(manageSErviceTypesTab);
 

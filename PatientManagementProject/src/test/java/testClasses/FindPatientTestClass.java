@@ -15,7 +15,7 @@ public class FindPatientTestClass extends BaseClass {
 	HomePageClass hp;
 	FindPatientRecordClass fp;
 
-	@Test(priority = 1, groups = { "patientEdits" },retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 1, groups = { "patientEdits" }, retryAnalyzer = RetryAnalyzer.class)
 	public void verifySearchingPatientRecord() throws IOException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
@@ -29,7 +29,7 @@ public class FindPatientTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 2, groups = { "patientEdits" },retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 2, groups = { "patientEdits" }, retryAnalyzer = RetryAnalyzer.class)
 	public void verifyIfPatientEditisWorking() throws IOException, InterruptedException {
 		lp = new LoginPageClass(driver);
 		hp = new HomePageClass(driver);
@@ -39,7 +39,7 @@ public class FindPatientTestClass extends BaseClass {
 		Assert.assertTrue(fp.editPatient("100HYE", "New"));
 	}
 
-	@Test(priority = 3, groups = { "patientEdits" },retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 3, groups = { "patientEdits" }, retryAnalyzer = RetryAnalyzer.class)
 
 	public void verifyDeletingPatient() throws InterruptedException, IOException
 

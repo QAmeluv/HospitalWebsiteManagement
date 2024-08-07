@@ -20,10 +20,11 @@ public class LoginPageTestClass extends BaseClass {
 	LoginPageClass lp;
 	HomePageClass hp;
 
-	@Test(priority = 4, groups = { "basicfunctionality" },retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 4, groups = { "basicfunctionality" }, retryAnalyzer = RetryAnalyzer.class)
 	public void verifySucessfulLogin() throws IOException {
 		lp = new LoginPageClass(driver);
-		lp.enterUserName(lp.readStringDataFromExcel(1, 1)).enterPassword(lp.readStringDataFromExcel(1, 2)).clickOnPharmacyTab().clickOnLoginBtm();
+		lp.enterUserName(lp.readStringDataFromExcel(1, 1)).enterPassword(lp.readStringDataFromExcel(1, 2))
+				.clickOnPharmacyTab().clickOnLoginBtm();
 		hp = new HomePageClass(driver);
 		String actual = hp.getsuperAdminTextValue();
 		AssertJUnit.assertEquals(actual, lp.readStringDataFromExcel(1, 3));
@@ -31,7 +32,7 @@ public class LoginPageTestClass extends BaseClass {
 	}
 
 	@Test(dataProviderClass = DataProviderClass.class, dataProvider = "unsucessfulLoginData", priority = 2, groups = {
-			"basicfunctionality" },retryAnalyzer = RetryAnalyzer.class)
+			"basicfunctionality" }, retryAnalyzer = RetryAnalyzer.class)
 
 	public void verifyUnsucessfulLogin(String uname, String pwd) throws IOException {
 		lp = new LoginPageClass(driver);
@@ -41,7 +42,7 @@ public class LoginPageTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 3, groups = { "basicfunctionality" },retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 3, groups = { "basicfunctionality" }, retryAnalyzer = RetryAnalyzer.class)
 
 	public void verifyCannotLoginOption() throws IOException {
 		lp = new LoginPageClass(driver);
@@ -50,7 +51,7 @@ public class LoginPageTestClass extends BaseClass {
 
 	}
 
-	@Test(priority = 1, groups = { "basicfunctionality" },retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 1, groups = { "basicfunctionality" }, retryAnalyzer = RetryAnalyzer.class)
 
 	public void verifyIfLogoIsDiplayed() {
 		lp = new LoginPageClass(driver);

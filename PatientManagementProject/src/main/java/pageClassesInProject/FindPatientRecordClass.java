@@ -59,8 +59,8 @@ public class FindPatientRecordClass {
 
 	@FindBy(id = "registration-submit")
 	WebElement registrationSubmitBtn;
-	
-	@FindBy(xpath="//span[@class='PersonName-middleName']")
+
+	@FindBy(xpath = "//span[@class='PersonName-middleName']")
 	WebElement homePageMiddleName;
 
 	public void searchPatient(String patientId) {
@@ -105,10 +105,10 @@ public class FindPatientRecordClass {
 
 		ex.visibilityOfElementLocatedWait(driver, foundPatientId);
 		ex.visibilityOfElementLocatedWait(driver, homePageMiddleName);
-		
-	boolean patientFlag=gl.getTextOfElement(foundPatientId).equalsIgnoreCase(patientId); 
-	boolean middletFlag=gl.getTextOfElement(homePageMiddleName).equalsIgnoreCase(middleName);
-	
+
+		boolean patientFlag = gl.getTextOfElement(foundPatientId).equalsIgnoreCase(patientId);
+		boolean middletFlag = gl.getTextOfElement(homePageMiddleName).equalsIgnoreCase(middleName);
+
 		System.out.println(patientFlag);
 		System.out.println(middletFlag);
 		return middletFlag;

@@ -112,10 +112,11 @@ public class RegisterAPatientPageClass {
 		return gl.getTextOfElement(registeredGivenName);
 
 	}
-	
+
 	public String readPatientGivenName() {
 		return RandomDataUtility.getfirstName();
 	}
+
 	public String readPatientLastName() {
 		return RandomDataUtility.getlastName();
 	}
